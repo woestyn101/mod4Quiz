@@ -95,7 +95,7 @@ var score = 0;
 
 // get higscores from local storage
 const stuScores = JSON.parse(localStorage.getItem("mystudents")) || [];
-console.log(stuScores);
+
 
 
 function saveScore(){
@@ -107,7 +107,7 @@ function saveScore(){
         studentScore: score
     };
 
-    console.log(studentScore);
+    
 
 
     stuScores.push(studentScore); 
@@ -117,7 +117,7 @@ function saveScore(){
     stuScores.splice(10);
     //store score and name to localstorage
     localStorage.setItem("mystudents", JSON.stringify(stuScores) );
-    console.log(stuScores)
+   
    // redirect to highscore page
    location.href="assets/pages/highscores.html";
     //window.open("assets/pages/highscores.html");
@@ -159,8 +159,7 @@ divTimer.textContent = "Time: " + timer;
 
 
 
-// divScore.textContent = score;
-// console.log(score);
+
 
 //function to run start page of quiz
 function init(){
@@ -185,7 +184,7 @@ function firstQuestion () {
     //questionBox.textContent = question1;
     startButton.setAttribute("style", "display:none")
     showQuestion(question1Options, list1, question1 )
-    console.log(score);
+  
 
 
     var myTimer = setInterval(countingDown, 1000);
@@ -193,7 +192,7 @@ function firstQuestion () {
  // timer started with first question
     function countingDown() {  
         timer--;
-        console.log(timer);
+       
         divTimer.textContent =  "Time: " + timer;
 
         if (timer == 0){
@@ -237,7 +236,7 @@ function showQuestion(array, ulid, theQuestion){
         // check for answer when option clicked
 
         function selectAnswer(event){
-           console.log(event.target.textContent);  
+           
           
               
               event.target.setAttribute(
@@ -245,7 +244,7 @@ function showQuestion(array, ulid, theQuestion){
                 "background: blue"
               );
               if (array == question1Options){
-                console.log("Question 1")
+            
                list1.setAttribute("style", "display:none");
                list2.setAttribute("style", "display:block");
                 showQuestion(question2Options, list2, question2);
@@ -253,98 +252,83 @@ function showQuestion(array, ulid, theQuestion){
                  // conditions to check for correct answer for question 1
                if (event.target.textContent == "3. function myFunction()"){
                 score += 5;
-                paragraph.textContent = "Correct";
-                console.log(score);
-               
+                paragraph.textContent = "Correct";                      
                 
-                console.log("correct");
+                
                }else {
                 score;
-                timer-= 10;
-                console.log("wrong");
-                paragraph.textContent = "Wrong";
-                
+                timer-= 10;              
+                paragraph.textContent = "Wrong";               
                 
                }
                 
               }else if (array == question2Options){
-                console.log("Question 2")
+            
                 list2.setAttribute("style", "display:none");
                 list3.setAttribute("style", "display:block");
                 showQuestion(question3Options, list3, question3);
             // conditions to check for correct answer for question 2
                 if (event.target.textContent == "2. <script>"){
                     score += 5;
-                    console.log(score);
-                    console.log("correct");
+                  
                     paragraph.textContent = "Correct";
                    }else {
                     score;
                     timer-= 10;
-                    console.log("wrong");
+                   
                     paragraph.textContent = "Wrong";
                    }
 
               }
               else if (array == question3Options){
-                console.log("Question 3")
+               
                 list3.setAttribute("style", "display:none");
                 list4.setAttribute("style", "display:block");
                 showQuestion(question4Options, list4, question4);
 
                 // conditions to check for correct answer for question 3
                 if (event.target.textContent == "4. <script src='xxx.js'>"){
-                    score += 5;
-                    console.log(score);
-                    console.log("correct");
+                    score += 5;                   
                     paragraph.textContent = "Correct";
                     
                    }else {
                     score;
-                    timer-= 10;
-                    console.log("wrong");
+                    timer-= 10;                  
                     paragraph.textContent = "Wrong";
                    }
 
               } else if (array == question4Options){
-                console.log("Question 4")
-                list4.setAttribute("style", "display:none");
+                 list4.setAttribute("style", "display:none");
                 list5.setAttribute("style", "display:block");
                 showQuestion(question5Options, list5, question5);
 
                 // conditions to check for correct answer for question 3
                 if (event.target.textContent == "3. alert('Hellow World');"){
                     score += 5;
-                    console.log(score);
-                    console.log("correct");
                     paragraph.textContent = "Correct";
                     
                    }else {
                     score;
                     timer-= 10;
-                    console.log("wrong");
                     paragraph.textContent = "Wrong";
                    }
 
               }           
               
               else if (array == question5Options){
-                console.log("Question 5")
+               
                 list4.setAttribute("style", "display:none");
                 //list4.setAttribute("style", "display:block");
                 
                 // condition to check for correct answer for question 4
                 if (event.target.textContent == "2. if ( i == 5)"){
                     score += 5;
-                    console.log(score);
-                    console.log("correct");
                     paragraph.textContent = "Correct";
                     
                    }else {
                     score;
                     timer-= 10;
-                    console.log("wrong");
-                    paragraph.textContent = "Wrong";
+                   
                    }
                    list5.setAttribute("style", "display:none");
                    questionBox.textContent = "All done! Your final score is: " + score;
