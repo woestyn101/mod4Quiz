@@ -86,6 +86,32 @@ var score = 0;
 const stuScores = JSON.parse(localStorage.getItem("mystudents")) || [];
 console.log(stuScores);
 
+
+function saveScore(){
+    paragraph.textContent = input.value;
+    
+        // create object to save name and highscore
+    var studentScore = {
+        student: input.value,
+        studentScore: score
+    };
+
+    console.log(studentScore);
+
+
+    stuScores.push(studentScore); 
+    // sorting the highscores
+    stuScores.sort((a,b) => b.studentScore - a.studentScore);
+    //just record the first 10 highest scors
+    stuScores.splice(10);
+    //store score and name to localstorage
+    localStorage.setItem("mystudents", JSON.stringify(stuScores) );
+    console.log(stuScores)
+   // redirect to highscore page
+   location.href="assets/pages/highscores.html";
+    //window.open("assets/pages/highscores.html");
+   }
+
 // setting header with link to highscores and timer
 divHighScores.setAttribute("id", "userScores");
 divHighScores.textContent = "View Highscores";
@@ -161,6 +187,21 @@ function firstQuestion () {
 
         if (timer == 0){
             clearInterval(myTimer);
+           
+                list1.setAttribute("style", "display:none");
+                list2.setAttribute("style", "display:none");
+                list3.setAttribute("style", "display:none");
+                list4.setAttribute("style", "display:none");
+
+                list4.setAttribute("style", "display:none");
+                questionBox.textContent = "All done! Your final score is: " + score;
+                input.setAttribute("style", "display:block");
+                saveButton.setAttribute("style", "display:block");
+
+                // add eventListener to save button
+                saveButton.addEventListener("click", saveScore);
+            
+           
 
         }
     }
@@ -280,30 +321,7 @@ function showQuestion(array, ulid, theQuestion){
                    saveButton.addEventListener("click", saveScore);
                    
                    // functon for save button
-                   function saveScore(){
-                    paragraph.textContent = input.value;
-                    
-                        // create object to save name and highscore
-                    var studentScore = {
-                        student: input.value,
-                        studentScore: score
-                    };
-
-                    console.log(studentScore);
-
-                
-                    stuScores.push(studentScore); 
-                    // sorting the highscores
-                    stuScores.sort((a,b) => b.studentScore - a.studentScore);
-                    //just record the first 10 highest scors
-                    stuScores.splice(10);
-                    //store score and name to localstorage
-                    localStorage.setItem("mystudents", JSON.stringify(stuScores) );
-                    console.log(stuScores)
-                   // redirect to highscore page
-                   location.href="assets/pages/highscores.html";
-                    //window.open("assets/pages/highscores.html");
-                   }
+                  
               }
               
               
