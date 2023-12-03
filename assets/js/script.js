@@ -87,6 +87,9 @@ var question3Options = ["<script href='xxx.js'>", "<script name='xxx.js'", "<scr
 var question4 =  "How do you write 'Hello World in an alert box?";
 var question4Options = ["mgsBox('Hellow World');", "msg('Hellow World');", "alert('Hellow World');", "alertBox('Hellow World');"]
 
+var question5 =  "How do you write 'Hello World in an alert box?";
+var question5Options = ["mgsBox('Hellow World');", "msg('Hellow World');", "alert('Hellow World');", "alertBox('Hellow World');"]
+
 // setting up score variable
 var score = 0;
 

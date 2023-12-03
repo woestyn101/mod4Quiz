@@ -52,6 +52,8 @@ https://www.youtube.com/watch?v=DFhmNLKwwGw
 
 https://www.youtube.com/watch?v=jfOv18lCMmw
 
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_storage_removeitem
+
 ## License
 
 MIT
