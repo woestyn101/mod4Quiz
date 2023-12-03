@@ -88,9 +88,25 @@ console.log(stuScores);
 
 // setting header with link to highscores and timer
 divHighScores.setAttribute("id", "userScores");
-divHighScores.setAttribute("style", "cursor: pointer")
 divHighScores.textContent = "View Highscores";
 divHighScores.addEventListener("click", goToScores)
+
+divHighScores.addEventListener("mouseover", decorateLink);
+
+function decorateLink(){
+    divHighScores.setAttribute("style", "color:blue; text-decoration: underline;")
+}
+
+
+function decorateLink(){
+    divHighScores.setAttribute("style", "color:blue; text-decoration: underline")
+}
+
+divHighScores.addEventListener("mouseout", returnStyle);
+
+function returnStyle(){
+    divHighScores.setAttribute("style", "color:black;")
+}
 
 function goToScores(){
     location.href="assets/pages/highscores.html";
