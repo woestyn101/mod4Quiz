@@ -150,14 +150,22 @@ function firstQuestion () {
     showQuestion(question1Options, list1, question1 )
     console.log(score);
 
+
+    var myTimer = setInterval(countingDown, 1000);
+
  // timer started with first question
     function countingDown() {  
         timer--;
         console.log(timer);
         divTimer.textContent = timer;
+
+        if (timer == 0){
+            clearInterval(myTimer);
+
+        }
     }
     
-    setInterval(countingDown, 1000);
+    
 }
 
    // function to insert each array with quesiont and answer options
