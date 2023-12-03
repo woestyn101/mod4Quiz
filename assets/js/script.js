@@ -112,9 +112,15 @@ function goToScores(){
     location.href="assets/pages/highscores.html";
 }
 
+//setting timer styles
+divTimer.setAttribute("id", "downTimer");
+
+var timer = 75;
+divTimer.textContent = timer;
 
 
-divTimer.textContent = 45;
+
+
 
 // divScore.textContent = score;
 // console.log(score);
@@ -143,6 +149,15 @@ function firstQuestion () {
     startButton.setAttribute("style", "display:none")
     showQuestion(question1Options, list1, question1 )
     console.log(score);
+
+ // timer started with first questions
+    function countingDown() {  
+        timer--;
+        console.log(timer);
+        divTimer.textContent = timer;
+    }
+    
+    setInterval(countingDown, 1000);
 }
 
    // function to insert each array with quesiont and answer options

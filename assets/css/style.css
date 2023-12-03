@@ -40,4 +40,10 @@ hr {
 #userScores {
     font-size: 2rem;
     cursor: pointer;
+    margin-left: 20px;
+}
+
+#downTimer {
+    font-size: 2rem;
+     margin-right: 20px;
 }
