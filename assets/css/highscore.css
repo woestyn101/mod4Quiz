@@ -1,10 +1,41 @@
 body {
 text-align: center;
 list-style-position: inside;
+margin: 0 auto;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 h1 {
     background-color: dodgerblue;
+    line-height: 2.5rem;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+#highScoreList {
+   
+    width: 30%;
+    margin-left:500px;
+    margin-bottom:20px;
+
+    }
+
+li {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    text-align: left;
+    
 }
 
 /* CSS */
