@@ -1,5 +1,6 @@
-var body = document.body;
+// declaring html element variables with javascript
 
+var body = document.body;
 var header = document.createElement("header");
 var divHighScores = document.createElement("div");
 var divScore = document.createElement("div")
@@ -14,28 +15,29 @@ var startButton = document.createElement("button");
 var footer = document.createElement("footer");
 var paragraph = document.createElement("p");
 
+// creating lists for arrays with answer options
 var list1 = document.createElement("ul");
 var list2 = document.createElement("ul");
 var list3 = document.createElement("ul");
 var list4 = document.createElement("ul");
 var list5 = document.createElement("ul");
 
+// don't display initial lists of answer options
 list1.setAttribute("style", "display:none");
 list2.setAttribute("style", "display:none");
 list3.setAttribute("style", "display:none");
 list4.setAttribute("style", "display:none");
 list5.setAttribute("style", "display:none");
 
-
-
-
-
+// setting up attributes for final input of user to store score and name
 input.setAttribute("type", "text");
 input.setAttribute("id", "userInitials");
 input.setAttribute("style", "display:none");
+// save button style and name to save name and score
 saveButton.setAttribute("style", "display:none");
 saveButton.textContent = "Save";
 
+// appending all the the html elements created with javascript
 body.append(header);
 header.appendChild(divHighScores);
 header.appendChild(divScore);
@@ -59,7 +61,7 @@ paragraph.textContent = "Result";
 
 
 
-//declaring array answers
+//declaring array answers and  questions
 var question1 =  "How do you create a function in javascript?";
 
 var question1Options = ["function = myFunction()", "function: myFunction", "function myFunction()", "function = myFunction{}"];
@@ -75,17 +77,21 @@ var question3Options = ["<script href='xxx.js'>", "<script name='xxx.js'", "<scr
 var question4 =  "How do you write 'Hello World in an alert box?";
 var question4Options = ["mgsBox('Hellow World');", "msg('Hellow World');", "alert('Hellow World');", "alertBox('Hellow World');"]
 
+// setting up score variable
 var score = 0;
 
+// get higscores from local storage
 const stuScores = JSON.parse(localStorage.getItem("mystudents")) || [];
 console.log(stuScores);
 
+// setting header with link to highscores and timer
 divHighScores.textContent = "View Highscores";
 divTimer.textContent = 45;
 
-divScore.textContent = score;
-console.log(score);
+// divScore.textContent = score;
+// console.log(score);
 
+//function to run start page of quiz
 function init(){
 
  titleHeading.textContent = "Coding Quiz Challenge";
@@ -95,9 +101,12 @@ function init(){
  startButton.textContent = "Start Quiz";
 }
 
+// initial page load
 init();
 
 startButton.addEventListener("click", firstQuestion);
+
+ // function to run when start quiz button is clicked
 
 function firstQuestion () {
 
@@ -108,6 +117,7 @@ function firstQuestion () {
     console.log(score);
 }
 
+   // function to insert each array with quesiont and answer options
 
 function showQuestion(array, ulid, theQuestion){
     ulid.setAttribute("style", "display:block");
@@ -117,7 +127,11 @@ function showQuestion(array, ulid, theQuestion){
         ulid.appendChild(liElement);
         liElement.textContent = ( i + 1 ) + ". " + array[i];
 
+        // adding eventlistener to answer options when clicked
+
         liElement.addEventListener("click", selectAnswer);
+
+        // check for answer when option clicked
 
         function selectAnswer(event){
            console.log(event.target.textContent);  
@@ -132,6 +146,8 @@ function showQuestion(array, ulid, theQuestion){
                list1.setAttribute("style", "display:none");
                list2.setAttribute("style", "display:block");
                 showQuestion(question2Options, list2, question2);
+
+                 // conditions to check for correct answer for question 1
                if (event.target.textContent == "3. function myFunction()"){
                 score += 5;
                 paragraph.textContent = "Correct";
@@ -145,13 +161,13 @@ function showQuestion(array, ulid, theQuestion){
                 
                 
                }
-
+                
               }else if (array == question2Options){
                 console.log("Question 2")
                 list2.setAttribute("style", "display:none");
                 list3.setAttribute("style", "display:block");
                 showQuestion(question3Options, list3, question3);
-
+            // conditions to check for correct answer for question 2
                 if (event.target.textContent == "2. <script>"){
                     score += 5;
                     console.log(score);
@@ -168,6 +184,8 @@ function showQuestion(array, ulid, theQuestion){
                 list3.setAttribute("style", "display:none");
                 list4.setAttribute("style", "display:block");
                 showQuestion(question4Options, list4, question4);
+
+                // conditions to check for correct answer for question 3
                 if (event.target.textContent == "4. <script src='xxx.js'"){
                     score += 5;
                     console.log(score);
@@ -184,7 +202,8 @@ function showQuestion(array, ulid, theQuestion){
                 console.log("Question 4")
                 list3.setAttribute("style", "display:none");
                 list4.setAttribute("style", "display:block");
-               
+                
+                // condition to check for correct answer for question 4
                 if (event.target.textContent == "3. alert('Hellow World');"){
                     score += 5;
                     console.log(score);
@@ -200,12 +219,15 @@ function showQuestion(array, ulid, theQuestion){
                    questionBox.textContent = "All done! Your final score is: " + score;
                    input.setAttribute("style", "display:block");
                    saveButton.setAttribute("style", "display:block");
+
+                   // add eventListener to save button
                    saveButton.addEventListener("click", saveScore);
                    
+                   // functon for save button
                    function saveScore(){
                     paragraph.textContent = input.value;
-                    //theScore = Math.floor(Math.random()* 100);
-
+                    
+                        // create object to save name and highscore
                     var studentScore = {
                         student: input.value,
                         studentScore: score
@@ -214,12 +236,15 @@ function showQuestion(array, ulid, theQuestion){
                     console.log(studentScore);
 
                 
-                stuScores.push(studentScore); 
-                stuScores.sort((a,b) => b.studentScore - a.studentScore);
-                stuScores.splice(5);
-                localStorage.setItem("mystudents", JSON.stringify(stuScores) );
-                console.log(stuScores)
-                
+                    stuScores.push(studentScore); 
+                    // sorting the highscores
+                    stuScores.sort((a,b) => b.studentScore - a.studentScore);
+                    //just record the first 10 highest scors
+                    stuScores.splice(10);
+                    //store score and name to localstorage
+                    localStorage.setItem("mystudents", JSON.stringify(stuScores) );
+                    console.log(stuScores)
+                   // redirect to highscore page
                     window.open("assets/pages/highscores.html");
                    }
               }
