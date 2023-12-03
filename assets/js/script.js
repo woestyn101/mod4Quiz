@@ -150,7 +150,7 @@ function firstQuestion () {
     showQuestion(question1Options, list1, question1 )
     console.log(score);
 
- // timer started with first questions
+ // timer started with first question
     function countingDown() {  
         timer--;
         console.log(timer);
@@ -195,10 +195,12 @@ function showQuestion(array, ulid, theQuestion){
                 score += 5;
                 paragraph.textContent = "Correct";
                 console.log(score);
+               
                 
                 console.log("correct");
                }else {
                 score;
+                timer-= 10;
                 console.log("wrong");
                 paragraph.textContent = "Wrong";
                 
@@ -218,6 +220,7 @@ function showQuestion(array, ulid, theQuestion){
                     paragraph.textContent = "Correct";
                    }else {
                     score;
+                    timer-= 10;
                     console.log("wrong");
                     paragraph.textContent = "Wrong";
                    }
@@ -237,6 +240,7 @@ function showQuestion(array, ulid, theQuestion){
                     
                    }else {
                     score;
+                    timer-= 10;
                     console.log("wrong");
                     paragraph.textContent = "Wrong";
                    }
@@ -255,6 +259,7 @@ function showQuestion(array, ulid, theQuestion){
                     
                    }else {
                     score;
+                    timer-= 10;
                     console.log("wrong");
                     paragraph.textContent = "Wrong";
                    }
