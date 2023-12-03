@@ -46,7 +46,7 @@ header.appendChild(divScore);
 header.appendChild(divTimer);
 body.appendChild(mainEl);
 body.appendChild(paragraph);
-mainEl.setAttribute("style", "background:yellow; width:50%")
+//mainEl.setAttribute("style", "background:yellow; width:50%")
 mainEl.appendChild(titleHeading);
 mainEl.appendChild(questionBox);
 mainEl.appendChild(final);
@@ -59,7 +59,9 @@ mainEl.appendChild(list3);
 mainEl.appendChild(list4);
 mainEl.appendChild(list5);
 
-paragraph.textContent = "Result";
+//paragraph.textContent = "Result";
+
+final.setAttribute("id","last");
 
 
 
@@ -212,7 +214,7 @@ function firstQuestion () {
    // function to insert each array with quesiont and answer options
 
 function showQuestion(array, ulid, theQuestion){
-    ulid.setAttribute("style", "display:block");
+    ulid.setAttribute("style", "display:block;");
     for (let i = 0; i < array.length; i++) {
         questionBox.textContent = theQuestion;
         var liElement = document.createElement('li');
