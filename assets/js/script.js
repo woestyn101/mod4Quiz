@@ -29,6 +29,8 @@ list3.setAttribute("style", "display:none");
 list4.setAttribute("style", "display:none");
 list5.setAttribute("style", "display:none");
 
+
+
 // setting up attributes for final input of user to store score and name
 input.setAttribute("type", "text");
 input.setAttribute("id", "userInitials");
@@ -85,7 +87,17 @@ const stuScores = JSON.parse(localStorage.getItem("mystudents")) || [];
 console.log(stuScores);
 
 // setting header with link to highscores and timer
+divHighScores.setAttribute("id", "userScores");
+divHighScores.setAttribute("style", "cursor: pointer")
 divHighScores.textContent = "View Highscores";
+divHighScores.addEventListener("click", goToScores)
+
+function goToScores(){
+    location.href="assets/pages/highscores.html";
+}
+
+
+
 divTimer.textContent = 45;
 
 // divScore.textContent = score;
@@ -245,7 +257,8 @@ function showQuestion(array, ulid, theQuestion){
                     localStorage.setItem("mystudents", JSON.stringify(stuScores) );
                     console.log(stuScores)
                    // redirect to highscore page
-                    window.open("assets/pages/highscores.html");
+                   location.href="assets/pages/highscores.html";
+                    //window.open("assets/pages/highscores.html");
                    }
               }
               
