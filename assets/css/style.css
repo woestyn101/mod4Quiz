@@ -178,3 +178,134 @@ h2 {
     box-shadow: rgb(190,0,50)  0 0 0 .125em;
   }
   
+  @media screen and (max-width:926px){
+
+    ul {
+   width: 70%;
+    }
+
+  }
+
+  @media screen and (max-width:808px){
+
+    ul {
+   width: 80%;
+    }
+
+  }
+
+  @media screen and (max-width:708px){
+
+    ul {
+   width: 90%;
+    }
+
+  }
+
+  @media screen and (max-width:636px){
+
+    ul {
+   width: 100%;
+    }
+
+  }
+
+  @media screen and (max-width:587px){
+
+    ul {
+   width: 100%;
+    }
+
+    li{ 
+        width: 100%;
+    }
+
+
+
+    @media screen and (max-width:546px){
+
+        main {
+            width: 70%;
+        }
+
+        ul {
+       width: 100%;
+        }
+    
+        li{ 
+            width: 100%;
+        }
+    
+    
+      }
+  }
+
+  @media screen and (max-width:476px){
+
+    main {
+        width: 75%;
+    }
+
+    ul {
+   width: 100%;
+    }
+
+    li{ 
+        width: 100%;
+    }
+
+
+  }
+
+  @media screen and (max-width:476px){
+
+    main {
+        width: 80%;
+    }
+
+    ul {
+   width: 100%;
+    }
+
+    li{ 
+        width: 100%;
+    }
+
+
+  }
+
+  @media screen and (max-width:409px){
+
+    main {
+        width: 90%;
+    }
+
+    ul {
+   width: 100%;
+    }
+
+    li{ 
+        width: 100%;
+    }
+
+
+  }
+
+  @media screen and (max-width:362px){
+
+    main {
+        width: 100%;
+    }
+
+    ul {
+   width: 100%;
+    }
+
+    li{ 
+        width: 100%;
+    }
+
+
+  }
+
+
