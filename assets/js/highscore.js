@@ -1,3 +1,6 @@
+var backBtn = document.querySelector("#backBtn");
+var clearBtn = document.querySelector("#clearBtn");
+
 
 const highScoreList = document.getElementById("highScoreList");
 
@@ -11,4 +14,18 @@ highScoreList.innerHTML = highScores.map( score => {
 
 
 
+backBtn.addEventListener("click", goToMain);
+
+function goToMain(){
+    location.href="/index.html";
+}
 console.log(highScores);
+
+clearBtn.addEventListener("click", clearScores);
+
+function clearScores(){
+   localStorage.removeItem("mystudents");
+   window.location.reload();
+}
+
+
