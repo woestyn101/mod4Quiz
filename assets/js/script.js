@@ -7,6 +7,9 @@ var divTimer = document.createElement("div");
 var mainEl = document.createElement("main");
 var titleHeading = document.createElement("h1");
 var questionBox = document.createElement("h2");
+var final = document.createElement("div");
+var input = document.createElement("input")
+var saveButton = document.createElement("button");
 var startButton = document.createElement("button");
 var footer = document.createElement("footer");
 var paragraph = document.createElement("p");
@@ -25,6 +28,11 @@ list5.setAttribute("style", "display:none");
 
 
 
+input.setAttribute("type", "text");
+input.setAttribute("style", "display:none");
+saveButton.setAttribute("style", "display:none");
+saveButton.textContent = "Save";
+
 body.append(header);
 header.appendChild(divHighScores);
 header.appendChild(divScore);
@@ -34,6 +42,9 @@ body.appendChild(paragraph);
 mainEl.setAttribute("style", "background:yellow; width:50%")
 mainEl.appendChild(titleHeading);
 mainEl.appendChild(questionBox);
+mainEl.appendChild(final);
+final.appendChild(input);
+final.appendChild(saveButton);
 mainEl.appendChild(startButton);
 mainEl.appendChild(list1);
 mainEl.appendChild(list2);
@@ -179,13 +190,22 @@ function showQuestion(array, ulid, theQuestion){
                     console.log("wrong");
                     paragraph.textContent = "Wrong";
                    }
+                   list4.setAttribute("style", "display:none");
+                   questionBox.textContent = "All done! Your final score is: " + score;
+                   input.setAttribute("style", "display:block");
+                   saveButton.setAttribute("style", "display:block");
+                   saveButton.addEventListener("click", saveScore);
+                   
+                   function saveScore(){
+                    paragraph.textContent = input.value;
+                   }
               }
               
               
               else{
                 console.log("array not found")
               }
-           
+             
 
         }
 
