@@ -54,6 +54,8 @@ https://www.youtube.com/watch?v=jfOv18lCMmw
 
 https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_storage_removeitem
 
+https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS
+
 ## License
 
 MIT

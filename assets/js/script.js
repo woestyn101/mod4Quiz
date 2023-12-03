@@ -77,18 +77,18 @@ var question1 =  "How do you create a function in javascript?";
 var question1Options = ["function = myFunction()", "function: myFunction", "function myFunction()", "function = myFunction{}"];
 
 var question2 =  "Inside which element do we put the Javascript";
-var question2Options = ["<javascript>", "<script>", "<scripting",  "<js>"];
+var question2Options = ["<javascript>", "<script>", "<scripting>",  "<js>"];
 
 
 var question3 =  "What is the correct syntax for referring to an external javasript file?"
-var question3Options = ["<script href='xxx.js'>", "<script name='xxx.js'", "<script meta='xxx.js'", "<script src='xxx.js'"];
+var question3Options = ["<script href='xxx.js'>", "<script name='xxx.js'>", "<script meta='xxx.js'>", "<script src='xxx.js'>"];
 
 
 var question4 =  "How do you write 'Hello World in an alert box?";
 var question4Options = ["mgsBox('Hellow World');", "msg('Hellow World');", "alert('Hellow World');", "alertBox('Hellow World');"]
 
-var question5 =  "How do you write 'Hello World in an alert box?";
-var question5Options = ["mgsBox('Hellow World');", "msg('Hellow World');", "alert('Hellow World');", "alertBox('Hellow World');"]
+var question5 =  "How to write an IF statement in JavaScript?";
+var question5Options = ["if i = 5 then", "if ( i == 5)", "if i = 5", "if (i = 5)"]
 
 // setting up score variable
 var score = 0;
@@ -285,14 +285,15 @@ function showQuestion(array, ulid, theQuestion){
                     paragraph.textContent = "Wrong";
                    }
 
-              }else if (array == question3Options){
+              }
+              else if (array == question3Options){
                 console.log("Question 3")
                 list3.setAttribute("style", "display:none");
                 list4.setAttribute("style", "display:block");
                 showQuestion(question4Options, list4, question4);
 
                 // conditions to check for correct answer for question 3
-                if (event.target.textContent == "4. <script src='xxx.js'"){
+                if (event.target.textContent == "4. <script src='xxx.js'>"){
                     score += 5;
                     console.log(score);
                     console.log("correct");
@@ -305,12 +306,13 @@ function showQuestion(array, ulid, theQuestion){
                     paragraph.textContent = "Wrong";
                    }
 
-              }else if (array == question4Options){
+              } else if (array == question4Options){
                 console.log("Question 4")
-                list3.setAttribute("style", "display:none");
-                list4.setAttribute("style", "display:block");
-                
-                // condition to check for correct answer for question 4
+                list4.setAttribute("style", "display:none");
+                list5.setAttribute("style", "display:block");
+                showQuestion(question5Options, list5, question5);
+
+                // conditions to check for correct answer for question 3
                 if (event.target.textContent == "3. alert('Hellow World');"){
                     score += 5;
                     console.log(score);
@@ -323,7 +325,28 @@ function showQuestion(array, ulid, theQuestion){
                     console.log("wrong");
                     paragraph.textContent = "Wrong";
                    }
-                   list4.setAttribute("style", "display:none");
+
+              }           
+              
+              else if (array == question5Options){
+                console.log("Question 5")
+                list4.setAttribute("style", "display:none");
+                //list4.setAttribute("style", "display:block");
+                
+                // condition to check for correct answer for question 4
+                if (event.target.textContent == "2. if ( i == 5)"){
+                    score += 5;
+                    console.log(score);
+                    console.log("correct");
+                    paragraph.textContent = "Correct";
+                    
+                   }else {
+                    score;
+                    timer-= 10;
+                    console.log("wrong");
+                    paragraph.textContent = "Wrong";
+                   }
+                   list5.setAttribute("style", "display:none");
                    questionBox.textContent = "All done! Your final score is: " + score;
                    input.setAttribute("style", "display:block");
                    saveButton.setAttribute("style", "display:block");
