@@ -80,5 +80,10 @@ h2 {
 }
 
 #userInitials {
-    width: 200px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+#saveBtn {
+    margin-left: 60px;
 }
