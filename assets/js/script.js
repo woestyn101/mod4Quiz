@@ -41,6 +41,7 @@ saveButton.classList.add("button-21");
 saveButton.setAttribute("id", "saveBtn");
 saveButton.textContent = "Save";
 
+// add button style
 startButton.classList.add("button-21");
 
 // appending all the the html elements created with javascript
@@ -63,8 +64,9 @@ mainEl.appendChild(list3);
 mainEl.appendChild(list4);
 mainEl.appendChild(list5);
 
-//paragraph.textContent = "Result";
 
+
+//giving id to final element
 final.setAttribute("id","last");
 
 
@@ -148,7 +150,7 @@ function goToScores(){
 divTimer.setAttribute("id", "downTimer");
 
 var timer = 75;
-divTimer.textContent = timer;
+divTimer.textContent = "Time: " + timer;
 
 
 
@@ -189,7 +191,7 @@ function firstQuestion () {
     function countingDown() {  
         timer--;
         console.log(timer);
-        divTimer.textContent = timer;
+        divTimer.textContent =  "Time: " + timer;
 
         if (timer == 0){
             clearInterval(myTimer);
