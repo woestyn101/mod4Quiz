@@ -29,6 +29,7 @@ list5.setAttribute("style", "display:none");
 
 
 input.setAttribute("type", "text");
+input.setAttribute("id", "userInitials");
 input.setAttribute("style", "display:none");
 saveButton.setAttribute("style", "display:none");
 saveButton.textContent = "Save";
@@ -198,6 +199,7 @@ function showQuestion(array, ulid, theQuestion){
                    
                    function saveScore(){
                     paragraph.textContent = input.value;
+                    window.open("assets/pages/highscores.html");
                    }
               }
               
