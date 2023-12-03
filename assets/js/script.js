@@ -28,6 +28,8 @@ list5.setAttribute("style", "display:none");
 
 
 
+
+
 input.setAttribute("type", "text");
 input.setAttribute("id", "userInitials");
 input.setAttribute("style", "display:none");
@@ -74,6 +76,9 @@ var question4 =  "How do you write 'Hello World in an alert box?";
 var question4Options = ["mgsBox('Hellow World');", "msg('Hellow World');", "alert('Hellow World');", "alertBox('Hellow World');"]
 
 var score = 0;
+
+const stuScores = JSON.parse(localStorage.getItem("mystudents")) || [];
+console.log(stuScores);
 
 divHighScores.textContent = "View Highscores";
 divTimer.textContent = 45;
@@ -199,6 +204,22 @@ function showQuestion(array, ulid, theQuestion){
                    
                    function saveScore(){
                     paragraph.textContent = input.value;
+                    //theScore = Math.floor(Math.random()* 100);
+
+                    var studentScore = {
+                        student: input.value,
+                        studentScore: score
+                    };
+
+                    console.log(studentScore);
+
+                
+                stuScores.push(studentScore); 
+                stuScores.sort((a,b) => b.studentScore - a.studentScore);
+                stuScores.splice(5);
+                localStorage.setItem("mystudents", JSON.stringify(stuScores) );
+                console.log(stuScores)
+                
                     window.open("assets/pages/highscores.html");
                    }
               }

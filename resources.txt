@@ -1,0 +1,10 @@
+https://stackoverflow.com/questions/9422974/createelement-with-id
+
+https://stackoverflow.com/questions/48493102/javascript-load-an-html-page-with-button-click
+
+https://stackoverflow.com/questions/4810927/how-to-go-up-a-level-in-the-src-path-of-a-url-in-html
+
+https://stackoverflow.com/questions/5656392/how-to-create-input-type-text-dynamically
+
+
+
