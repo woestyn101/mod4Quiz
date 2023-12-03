@@ -37,6 +37,7 @@ input.setAttribute("id", "userInitials");
 input.setAttribute("style", "display:none");
 // save button style and name to save name and score
 saveButton.setAttribute("style", "display:none");
+saveButton.classList.add("button-21");
 saveButton.setAttribute("id", "saveBtn");
 saveButton.textContent = "Save";
 
