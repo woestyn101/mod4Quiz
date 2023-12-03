@@ -41,6 +41,8 @@ saveButton.classList.add("button-21");
 saveButton.setAttribute("id", "saveBtn");
 saveButton.textContent = "Save";
 
+startButton.classList.add("button-21");
+
 // appending all the the html elements created with javascript
 body.append(header);
 header.appendChild(divHighScores);
