@@ -17,7 +17,7 @@ highScoreList.innerHTML = highScores.map( score => {
 backBtn.addEventListener("click", goToMain);
 
 function goToMain(){
-    location.href="/index.html";
+    location.href="https://woestyn101.github.io/mod4Quiz/";
 }
 console.log(highScores);
 
