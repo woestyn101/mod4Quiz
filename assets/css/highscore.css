@@ -42,6 +42,16 @@ li {
     
 }
 
+a:link {
+color:white;
+text-decoration: none;
+}
+
+a:visited {
+  color:white;
+  text-decoration: none;
+}
+
 /* CSS */
 .button-21 {
     align-items: center;
@@ -61,7 +71,7 @@ li {
     height: auto;
     justify-content: center;
     line-height: 1.5;
-    padding: 6px 20px;
+    padding: 5px 5px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -72,7 +82,7 @@ li {
     vertical-align: top;
     white-space: nowrap;
    
-    width: 10%;
+    width: 8%;
     margin-bottom: 10px;
     
   }
