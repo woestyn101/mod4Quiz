@@ -42,15 +42,7 @@ li {
     
 }
 
-a:link {
-color:white;
-text-decoration: none;
-}
 
-a:visited {
-  color:white;
-  text-decoration: none;
-}
 
 #back {
   background-color: #3EB2FD;
@@ -63,6 +55,16 @@ a:visited {
 #back:hover {
   background-color: blue;
 }
+
+a:link {
+  color:white;
+  text-decoration: none;
+  }
+  
+  a:visited {
+    color:white;
+    text-decoration: none;
+  }
 
 /* CSS */
 .button-21 {
@@ -164,7 +166,7 @@ a:visited {
         width: 20%;
     }
 
-    .button-21 {
+    #back {
         width: 15%;
     }
 
@@ -180,7 +182,7 @@ a:visited {
         width: 25%;
     }
 
-    .button-21 {
+    #back {
         width: 20%;
     }
 
@@ -195,7 +197,7 @@ a:visited {
         width: 40%;
     }
 
-    .button-21 {
+    #back {
         width: 20%;
     }
 
@@ -209,7 +211,7 @@ a:visited {
         width: 40%;
     }
 
-    .button-21 {
+    #back {
         width: 30%;
     }
 
@@ -223,7 +225,7 @@ a:visited {
         width: 50%;
     }
 
-    .button-21 {
+    #back {
         width: 40%;
     }
 
