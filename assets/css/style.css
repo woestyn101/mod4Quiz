@@ -78,14 +78,26 @@ h2 {
 
 }
 
+.checkmark {
+  background-color: green;
+}
+
 #userInitials {
     width: 150px;
     margin-bottom: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border: 2px solid dodgerblue;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 #saveBtn {
     margin-left: 60px;
 }
+
+
 
 /* CSS */
 .button-21 {

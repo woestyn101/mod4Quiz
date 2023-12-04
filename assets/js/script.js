@@ -15,6 +15,18 @@ var startButton = document.createElement("button");
 var footer = document.createElement("footer");
 var paragraph = document.createElement("p");
 
+//create checkmark 
+var correctMark = document.createElement("p");
+correctMark.innerHTML = "&#9989;";
+mark = correctMark.innerHTML;
+
+//creare cross
+var wrongMark = document.createElement("p");
+wrongMark.innerHTML = "	&#10060";
+wrongCheck = wrongMark.innerHTML;
+
+
+
 // creating lists for arrays with answer options
 var list1 = document.createElement("ul");
 var list2 = document.createElement("ul");
@@ -252,13 +264,13 @@ function showQuestion(array, ulid, theQuestion){
                  // conditions to check for correct answer for question 1
                if (event.target.textContent == "3. function myFunction()"){
                 score += 5;
-                paragraph.textContent = "Correct";                      
+                paragraph.textContent = mark + " Correct";                      
                 
                 
                }else {
                 score;
                 timer-= 10;              
-                paragraph.textContent = "Wrong";               
+                paragraph.textContent = wrongCheck + " Wrong";               
                 
                }
                 
@@ -271,12 +283,12 @@ function showQuestion(array, ulid, theQuestion){
                 if (event.target.textContent == "2. <script>"){
                     score += 5;
                   
-                    paragraph.textContent = "Correct";
+                    paragraph.textContent = mark + " Correct";
                    }else {
                     score;
                     timer-= 10;
                    
-                    paragraph.textContent = "Wrong";
+                    paragraph.textContent =  wrongCheck + " Wrong";
                    }
 
               }
@@ -289,12 +301,12 @@ function showQuestion(array, ulid, theQuestion){
                 // conditions to check for correct answer for question 3
                 if (event.target.textContent == "4. <script src='xxx.js'>"){
                     score += 5;                   
-                    paragraph.textContent = "Correct";
+                    paragraph.textContent = mark + " Correct";
                     
                    }else {
                     score;
                     timer-= 10;                  
-                    paragraph.textContent = "Wrong";
+                    paragraph.textContent =  wrongCheck + " Wrong";
                    }
 
               } else if (array == question4Options){
@@ -305,12 +317,12 @@ function showQuestion(array, ulid, theQuestion){
                 // conditions to check for correct answer for question 3
                 if (event.target.textContent == "3. alert('Hellow World');"){
                     score += 5;
-                    paragraph.textContent = "Correct";
+                    paragraph.textContent = mark + " Correct";
                     
                    }else {
                     score;
                     timer-= 10;
-                    paragraph.textContent = "Wrong";
+                    paragraph.textContent =  wrongCheck + " Wrong";
                    }
 
               }           
@@ -323,12 +335,12 @@ function showQuestion(array, ulid, theQuestion){
                 // condition to check for correct answer for question 4
                 if (event.target.textContent == "2. if ( i == 5)"){
                     score += 5;
-                    paragraph.textContent = "Correct";
+                    paragraph.textContent = mark + " Correct";
                     
                    }else {
                     score;
                     timer-= 10;
-                   
+                    paragraph.textContent =  wrongCheck + " Wrong";
                    }
                    list5.setAttribute("style", "display:none");
                    questionBox.textContent = "All done! Your final score is: " + score;
