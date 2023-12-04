@@ -13,12 +13,13 @@ highScoreList.innerHTML = highScores.map( score => {
 }).join("");
 
 
-
+/*
 backBtn.addEventListener("click", goToMain);
 
 function goToMain(){
     location.href="https://woestyn101.github.io/mod4Quiz/index.html";
 }
+*/
 console.log(highScores);
 
 clearBtn.addEventListener("click", clearScores);
