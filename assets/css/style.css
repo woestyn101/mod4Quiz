@@ -78,10 +78,6 @@ h2 {
 
 }
 
-.checkmark {
-  background-color: green;
-}
-
 #userInitials {
     width: 150px;
     margin-bottom: 10px;
@@ -94,7 +90,7 @@ h2 {
 }
 
 #saveBtn {
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 
